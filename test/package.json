@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^8.7.0",
+    "serverless-s3-local": "^0.6.22"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "@joi/date": "^2.1.0",
+    "aws-sdk": "^2.1123.0",
+    "fs": "^0.0.1-security",
+    "joi": "^17.6.0",
+    "path": "^0.12.7"
+  }
+}

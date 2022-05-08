@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "6fad381e-b9ee-4954-9020-e0d48ddf655b",
+		"name": "ServerlessProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addPayer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Juan\",\"dni\":5435543,\"tel\":213123123,\"email\":\"juan@juan.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/addPayer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"addPayer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "helloTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPayer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/getPayer/:dni",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"getPayer",
+						":dni"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "45645678",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "dni",
+							"value": "31132"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createRequest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MzQ4MTNkZmQxNjZiYzBlMDlkNGQwM2M5MTY3YjUxNGRkYmFhNjUyNjg2NWI4ZGYzMGRmOTgzNTc5MzBkZWU5NA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\":42331231,\r\n    \"first_due_date\": \"22-02-2023\",\r\n    \"first_total\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/createRequest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"createRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createRequest(endpoint core)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MzQ4MTNkZmQxNjZiYzBlMDlkNGQwM2M5MTY3YjUxNGRkYmFhNjUyNjg2NWI4ZGYzMGRmOTgzNTc5MzBkZWU5NA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payment_request\": \r\n    {\r\n        \"description\": \"prueba\",\r\n        \"first_due_date\" : \"22-05-2023\",\r\n        \"first_total\": 2311,\r\n        \"payer_name\": \"Pablo\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.qa.pagos360.com/payment-request",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qa",
+						"pagos360",
+						"com"
+					],
+					"path": [
+						"payment-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listRequests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/listRequest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"listRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequest (endpointCore)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MzQ4MTNkZmQxNjZiYzBlMDlkNGQwM2M5MTY3YjUxNGRkYmFhNjUyNjg2NWI4ZGYzMGRmOTgzNTc5MzBkZWU5NA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.qa.pagos360.com/payment-request/:id",
+					"protocol": "https",
+					"host": [
+						"api",
+						"qa",
+						"pagos360",
+						"com"
+					],
+					"path": [
+						"payment-request",
+						":id"
+					],
+					"query": [
+						{
+							"key": "detail_retentions",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "991336"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequest",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "MzQ4MTNkZmQxNjZiYzBlMDlkNGQwM2M5MTY3YjUxNGRkYmFhNjUyNjg2NWI4ZGYzMGRmOTgzNTc5MzBkZWU5NA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/dev/getRequest/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"getRequest",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "991336"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
